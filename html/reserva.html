@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Natureat:Reservas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="picnic, comida, parque, naturaleza, aire libre">
+    <meta name="description" content="Disfruta de un picnic ideal en un sitio agradable y espacioso ¡A qué esperas!">
+    <meta name="author" content="Daniel y Robert, daniel.castillocortijo@alum.uca.es, tecnorob2@gmail.com">
+    <meta name="designer" content="Daniel y Robert, daniel.castillocortijo@alum.uca.es, tecnorob2@gmail.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reserva.css">
+    <script src="../js/reserva_valida.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="cabecera"> <!-- Contenedor que contendrá logo, nombre de la página y el menú-->
+            <img src="../images/preview-removebg-preview.png" alt="Logotipo" width="100">
+            <!-- Si no se muestra la imagen se muestra "logotipo"-->
+
+
+            <div class="contenedor1">
+                <h4>Natureat</h4>
+                <nav> <!-- Menu de navegacion-->
+                    <ul class="menu">
+                        <li> <a href="./index.html"> Inicio</a></li>
+                        <li> <a href="./zonas.html"> Zonas </a> </li>
+                        <li> <a href="./reserva.html">Reservas </a></li>
+                        <li> <a href="./Eventos.html">Actividades </a></li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <h1><span>Reserva</span> tu mesa</h1>
+    <div id="errorContainer" class="error-container"></div>
+    <section>
+        
+
+        
+        <form action="http://localhost:8080/reserva" method="post" onsubmit="return validar()"> <!-- Formulario de contacto para llevar a cabo la reserva. Controlamos el envio con onsumbit()-->
+            <div>
+                <h2>¿Quién eres?</h2>
+                <label for="nombre">Nombre:</label>
+                <input required type="text" id="nombre" name="nombre">
+                <label for="apellidos">Apellidos:</label>
+                <input required type="text" id="apellidos" name="apellidos">
+                <label for="email">Correo electrónico:</label>
+                <input required type="email" id="email" name="email">
+            </div>
+            <div>
+                <h2>Detalla tu reserva</h2>
+                <label for="numerodepersonas">Número de personas:</label>
+                <input required id="numerodepersonas" name="numerodepersonas">
+
+                <label for="tipodemesas">Tipo de mesa:</label>
+                <select id="tipodemesas" name="tipodemesas">
+                    <option value="-1">Selecciona una opción...</option>
+                    <option value="1">Mesa normal</option>
+                    <option value="2">Zona de barbacoa</option>
+                    <option value="3">Zona mixta</option>
+                </select>
+                <label for="fecha">Selecciona una fecha:</label>
+                <input type="date" id="fecha" name="fecha">
+                    <div>
+                        <label for="horaini">De:</label>
+                        <input type="time" id="horaini" name="hora">
+                        <label for="horafin">a:</label>
+                        <input type="time" id="horafin" name="hora">
+                    </div>
+                <label for="numerodemesa">Número de mesa:</label>
+                <select id="numerodemesa" name="numerodemesa">
+                    <option value="-1">Selecciona una opción...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="1">13</option>
+                    <option value="2">14</option>
+                    <option value="3">15</option>
+                    <option value="1">16</option>
+                    <option value="2">17</option>
+                    <option value="3">18</option>
+                    <option value="1">19</option>
+                    <option value="2">20</option>
+                    <option value="3">21</option>
+                </select>
+            </div>
+            <input type="submit" value="Enviar">
+            
+        </form>
+
+    
+
+        <aside>
+            <h2>Observa el parque</h2>
+            <img src="../images/maparque.png"
+                alt="Parque" height="500" width="570">
+        </aside>
+    </section>
+
+   
+    <footer> <!-- Pie de página-->
+        <div class="Contenedor7">
+            <img src="../images/preview-removebg-preview.png" alt="Logotipo">
+            <h4>Natureat</h4>
+            <h5>Todos los derechos reservados &copy;</h5>
+            <h5>Diseñado por el equipo técnico de la UCA</h5>
+            <a href="#"><h5>Política de Privacidad</h5></a>
+            <a href="#"><h5>Política de Cookies</h5></a>
+        </div>
+    
+        <div class="Contenedor8">
+            <h5>Nuestras redes sociales</h5>
+            <div class="social-icons">
+                <a href="#"><img src="../images/facebook-1.png" alt="Facebook"></a>
+                <a href="#"><img src="../images/instagram-1.png" alt="Instagram"></a>
+                <a href="#"><img src="../images/whatsapp-1.png" alt="WhatsApp"></a>
+                <a href="#"><img src="../images/email.png" alt="Email"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="reserva.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="picnic, comida, parque, naturaleza, aire libre">
+    <meta name="description" content="Disfruta de un picnic ideal en un sitio agradable y espacioso ¡A qué esperas!">
+    <meta name="author" content="Daniel y Robert, daniel.castillocortijo@alum.uca.es, tecnorob2@gmail.com">
+    <meta name="designer" content="Daniel y Robert, daniel.castillocortijo@alum.uca.es, tecnorob2@gmail.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Utilizamos la fuente Inter para los titulos-->
+    <link href="../css/index.css" rel="stylesheet">
+    <script src="../js/index_pagina.js"></script>
+    <title>Natureat: Tu picnic soñado</title>
+</head>
+
+
+<body>
+
+
+    <header>
+        <div class="cabecera"> <!-- Contenedor que contendrá logo, nombre de la página y el menú-->
+            <img src="../images/preview-removebg-preview.png" alt="Logotipo" width="100">
+            <!-- Si no se muestra la imagen se muestra "logotipo"-->
+
+
+            <div class="contenedor1">
+                <h4>Natureat</h4>
+                <nav> <!-- Menu de navegacion-->
+                    <ul class="menu">
+                        <li> <a href="./index.html"> Inicio</a></li>
+                        <li> <a href="./zonas.html"> Zonas </a> </li>
+                        <li> <a href="./reserva.html">Reservas </a></li>
+                        <li> <a href="./Eventos.html">Actividades </a></li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Comenzamos con el contenido debajo de la cabecera-->
+
+    
+
+        <section class="Contenedor2">
+            <h1> Bienvenido a <span class="Verde"> Natureat</span> </h1>
+        </section>
+
+
+
+        <section class="Contenedor3">  <!-- Sección del carrusel-->
+            <div class="Contenedor4">
+                <h2> La belleza de la <span class="Verde">Naturaleza</span></h2>
+                <div class="Contenedor5">
+                    <div class="carousel" role="region" aria-label="Carrusel de imágenes de la naturaleza">
+                        <div class="carousel-images" aria-live="polite">
+                            <img src="../images/nightpicnic.png" class="active"
+                                alt="Picnic nocturno con una lámpara encendida">
+                            <img src="../images/cometa.png" alt="Persona volando una cometa en el parque">
+                            <img src="../images/bellezaotonial.png"
+                                alt="Paisaje otoñal con hojas caídas y árboles de colores">
+                        </div>
+                        <button class="carousel-btn prev" onclick="prevSlide()"
+                            aria-label="Imagen anterior">&#10094;</button> <!-- Llamamos al evento de anterior imagen-->
+                        <button class="carousel-btn next" onclick="nextSlide()"
+                            aria-label="Imagen siguiente">&#10095;</button> <!-- Llamamos al evento de siguiente imagen-->
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+    <section>
+        <div class="Contenedor4">
+            <h2> ¿Por qué visitarnos?</h2>
+        </div>
+        <div class="tarjetas-contenedoras-1"> <!-- Contenedor para las tarjetas con imagenes, títulos y textos -->
+            <div class="Tarjeta"> <!-- Tarjeta 1-->
+                <img src="../images/sabores.jpg" alt="Sabores de la naturaleza" width="200">
+                <h3> Sabores bajo la naturaleza</h3>
+                <p> Disfruta de una comida al aire libre rodeado de naturaleza. Disfruta de tu espacio ideal para
+                    compartir
+                    con familia y amigos</p>
+                <a href="../html/zonas.html">
+                    Más información
+                </a>
+            </div>
+
+            <br>
+
+            <div class="Tarjeta"> <!-- Tarjeta 2-->
+                <img src="../images/actividadescampo.jpg" alt="Actividades de campo" width="200">
+                <h3> Actividades de campo</h3>
+                <p> En El Parque siempre te esperarán eventos y juegos de todo tipo para disfrutar con los tuyos. ¡A qué
+                    esperas! </p>
+                <a href="../html/Eventos.html">
+                    ¡Más actividades!
+
+                </a>
+
+            </div>
+
+            <br>
+
+            <div class="Tarjeta"> <!-- Tarjeta 3-->
+                <img src="../images/actividadesairelibre.jpeg" alt="Disfruta al aire libre" width="200">
+                <h3> Disfruta al aire libre</h3>
+                <p>Comer al aire libre en un parque combina naturaleza, aire fresco y relajación, creando una
+                    experiencia simple pero revitalizante.
+                </p>
+                <a href="../html/reserva.html">
+                    ¡Quiero saber más!
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <section> <!-- Contenedor para el apartado de picnic perfecto-->
+        <div class="Contenedor4">
+            <h2> Disfruta de tu <span class="Verde">picnic</span> perfecto</h2>
+        </div>
+
+        <div class="Contenedor6">
+            <div class="texto"> <!-- Contenedor para englobar el texto de una única tarjeta y poder aplicarle estilos correctamente-->
+                <h4>Cultura y Sol</h4>
+                <h5>Algo que te hará sentir en un paraíso</h5>
+                <p>Lo mejor para un buen picnic, es el Sol.</p>
+                <p>El sol brilla con calidez, el cielo es un lienzo despejado de azul intenso, y una suave brisa
+                    refresca
+                    el ambiente sin robar protagonismo a la temperatura ideal. El sonido de los pájaros, la belleza
+                    de
+                    las flores y el césped verde invita a relajarse. Es el momento perfecto para extender una manta,
+                    disfrutar de comida deliciosa y compartir risas. ¡Ven a disfrutar de este clima espectacular!
+                </p>
+            </div>
+            <img src="../images/comidafamiliar.png" alt="Cultura y sol">
+        </div>
+
+
+        <div>
+            <!-- Contenedor para el apartado de temas de interés,es un contenido secundario por lo que utilizaremos aside-->
+            <div class="Contenedor4">
+                <h3> ¡Temas que te podrían interesar antes de visitarnos!</h3>
+            </div>
+            <div class="tarjetas-contenedoras-2">
+                <!-- Contenedor para las tarjetas con imagenes, títulos y textos -->
+                <aside class="Tarjeta"> <!-- Tarjeta 1-->
+                    <img src="../images/mantasparque.png" alt="Manta de picnic" width="200">
+                    <h3> Mantas de picnic</h3>
+                    <p>¿Buscas una buena manta de picnic sin tener un gran coste? Puedes consultar más información
+                        en el
+                        siguiente botón</p>
+                    <a href="https://elpais.com/escaparate/estilo-de-vida/2024-05-13/manta-picnic.html">
+                        ¡Quiero saber más!
+                    </a>
+                </aside>
+
+                <br>
+
+
+                <aside class="Tarjeta"> <!-- Tarjeta 2-->
+                    <img src="../images/actividadespicnic.png" alt="Actividades al campo" width="200">
+                    <h3> Accesorios para picnic</h3>
+                    <p> ¡Los mejores accesorios para picnic que te permitirán enriquecer tu experiencia un nivel más
+                        allá de lo habitual!</p>
+
+                    <a
+                        href="https://elpais.com/escaparate/2023-04-12/15-accesorios-imprescindibiles-para-un-picnic-perfecto-disponibles-en-amazon-a-precios-increibles.html">
+                        Más informacion
+                    </a>
+                </aside>
+
+                <br>
+
+
+                <aside class="Tarjeta"> <!-- Tarjeta 3-->
+                    <img src="../images/comidapicnic.webp" alt="Disfruta al aire libre" width="200">
+                    <h3> Recetas ideales para tu picnic</h3>
+                    <p>¿No sabes qué comida llevar al picnic? ¡No te preocupes! Te traemos unas recetas que te harán
+                        gozar un picnic saludable y sabroso.</p>
+                    <a href="https://www.nuevoestilo.es/recetas-trucos-cocina/g61405914/recetas-picnic-campo-playa/">
+                        ¡Enséñame esas recetas!
+                    </a>
+
+                </aside>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    </div>
+
+
+    <footer> <!-- Pie de página-->
+        <div class="Contenedor7"> 
+            <img src="../images/preview-removebg-preview.png" alt="Logotipo">
+            <h4>Natureat</h4>
+            <h5>Todos los derechos reservados &copy;</h5>
+            <h5>Diseñado por el equipo técnico de la UCA</h5>
+            <a href="#">
+                <h5>Política de Privacidad</h5>
+            </a>
+            <a href="#">
+                <h5>Política de Cookies</h5>
+            </a>
+        </div>
+
+        <div class="Contenedor8">
+            <h5>Nuestras redes sociales</h5>
+            <div class="social-icons">
+                <a href="#"><img src="../images/facebook-1.png" alt="Facebook"></a>
+                <a href="#"><img src="../images/instagram-1.png" alt="Instagram"></a>
+                <a href="#"><img src="../images/whatsapp-1.png" alt="WhatsApp"></a>
+                <a href="#"><img src="../images/email.png" alt="Email"></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

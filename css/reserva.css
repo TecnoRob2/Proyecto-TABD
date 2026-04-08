@@ -1,0 +1,506 @@
+/*Ajustes generales*/
+
+*{
+    font-family: 'Inter',sans-serif;
+
+}
+
+
+
+body
+{
+    margin:0; /*quitar espacios entre los elementos*/
+}
+
+/*----- CABECERA -----*/
+
+
+.cabecera
+{
+    display: flex; /*bloques en misma linea*/
+    background-color: #6BFF75;
+    
+}
+
+
+
+
+.cabecera > img
+{
+    margin-left: 10px; /*margen izquierdo de la imagen*/
+    width: 100px;
+
+}
+
+
+.contenedor1
+{
+    display: flex; /*bloques misma linea*/
+}
+
+.contenedor1 > h4
+{
+    text-align: center;
+    margin-top:40px;
+
+}
+
+
+
+
+.menu
+{
+    margin-top: 30px;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left:350px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+.menu >li > a
+{
+    text-decoration: none;
+    text-align: center;
+    color:black;
+    margin-left: 30px;
+    font-weight: bold;
+    
+
+}
+
+.menu a:hover
+{
+    text-decoration: underline;
+
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: black;
+}
+
+
+/* Estilo del título principal */
+h1
+{
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 100px;
+    font-size: 2.5em;
+}
+h1 span
+{
+    color: #00AD0C;
+}
+
+.claseResaltado
+{
+    border: red 2px solid;  
+
+}
+
+/* Estilos del cuerpo */
+.error-container {
+    background-color: #ffe6e6;
+    border: 1px solid red;
+    padding: 10px 20px 10px 20px; /*top right bottom left*/
+    margin: 10px 40px 10px 40px; /*top right bottom left*/
+    color: red;
+    display: none; /* Se mostrará solo cuando existan errores */
+    border-radius: 10px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-left: 0px 20px 20px 20px; /*top right bottom left*/
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+form div {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 50%;
+}
+
+div > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+div > div > label {
+    align-self: center;
+}
+
+form input, form select {
+    padding: 10px;
+    margin: 5px 5px 20px 5px; /*top right bottom left*/
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    display: flex;
+    align-self: flex-end;
+}
+form input[type="submit"], form input[type="time"] {
+
+    background-color: #66ff66;
+    /*border: none;*/
+    cursor: pointer;
+    font-weight: bold;
+    align-self: center;
+}
+
+
+form input[type="submit"]:hover {
+    background-color: #00AD0C;
+    text-decoration: underline;
+
+}
+
+
+
+/* Estilos del mapa */
+aside {
+    width: 30%;
+}
+
+aside img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*----- PIE DE PÁGINA -----*/
+
+
+footer {
+    background-color: #6BFF75; /* Color de fondo verde */
+    padding: 20px 50px; /* Espaciado interior */
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a los lados */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.Contenedor7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.Contenedor7 img {
+    width: 80px; /* Tamaño del logo */
+    margin-bottom: 10px;
+}
+
+.Contenedor7 h4 {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.Contenedor7 h5 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #333;
+}
+
+.Contenedor7 a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.Contenedor7 a:hover {
+    text-decoration: underline;
+}
+
+.Contenedor8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right:200px;
+}
+
+.Contenedor8 h5 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.Contenedor8 .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.Contenedor8 .social-icons img {
+    width: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Contenedor8 .social-icons img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el raton */
+}
+
+
+
+
+/* MEDIA QUERY para pantallas de hasta 1070px */
+@media screen and (max-width: 1070px) {
+
+   
+    footer {
+        width: 100%;
+        height: 100%;
+        flex-direction: column; /*  disposición de los elementos a columna en lugar de fila */
+        text-align: center; /* Centra el texto*/
+        padding: 20px 0; /* Agrega espacio arriba y abajo */
+    }
+
+    /* Ajuste del margen superior del contenedor8 */
+    .Contenedor8 {
+        margin-top: 20px; /* Agrega margen superior para separar este contenedor de otros elementos */
+    }
+
+    .social-icons
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Estilos para el contenedor6 en pantallas pequeñas */
+    .Contenedor6 {
+        flex-direction: column; /*  los elementos  se apilan en columna */
+        text-align: center; /* Centra el texto*/
+        padding: 10px; /* margen interno para mejor legibilidad */
+    }
+
+    /* Ajuste del contenido de texto dentro de contenedor6 */
+    .Contenedor6 .texto {
+        max-width: 100%; /* texto ocupa todo el ancho disponible */
+        padding: 10px; /*  margen para mejorar la distribución del texto */
+    }
+
+    /* Ajuste de las imágenes dentro del contenedor6 */
+    .Contenedor6 img {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%; /* Hace que las imágenes ocupen todo el ancho disponible */
+        max-width: 100%; /* Evita que las imágenes se desborden del contenedor */
+        height: auto; /* proporción original de la imagen */
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    form {
+        width: 90%; /* Ajustar el ancho del formulario */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    form div {
+        width: 100%; /* Hacer que los campos ocupen todo el ancho */
+        text-align: left;
+    }
+
+    div > div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form input,
+    form select {
+        width: 95%; /* Ajustar el ancho de los inputs */
+        max-width: 500px;
+        text-align: left;
+        margin: 5px auto;
+    }
+
+    /* Ajuste del botón */
+    form input[type="submit"] {
+        width: auto;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* Imagen y título debajo del formulario */
+    aside {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    aside h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    aside img {
+        width: 95%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Estilos para pantallas pequeñas HEADER*/
+@media screen and (max-width: 768px) {
+    .cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #6BFF75;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu li {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu a {
+        display: block;
+    }
+
+    /* Icono de hamburguesa mejor alineado */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background: none;
+        border: none;
+        color: black;
+    }
+
+    /* Ajustar para alinear con "Natureat" */
+    .contenedor1 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Mostrar el menú cuando esté activo */
+    .menu.active {
+        display: flex;
+    }
+}
+
+
+/* Hacer que el menú hamburguesa aparezca en pantallas de hasta 1070px */
+@media screen and (max-width: 1070px) {
+    .cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #6BFF75;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu li {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu a {
+        display: block;
+    }
+
+    /* Icono de hamburguesa mejor alineado */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background: none;
+        border: none;
+        color: black;
+    }
+
+    /* Ajustar para alinear con "Natureat" */
+    .contenedor1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Mostrar el menú cuando esté activo */
+    .menu.active {
+        display: flex;
+    }
+}

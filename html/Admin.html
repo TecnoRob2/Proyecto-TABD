@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NATUREAT: MANEJO DE RESERVAS</title>
+
+    <!-- Cargar jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <!-- Enlace a los scripts -->
+    <script type="module">
+        import { getAll } from './wsinvocation.js';
+        console.log(getAll);
+    </script>
+    <script type="text/javascript" src="./reservas-services.js"></script>
+    <script type="text/javascript" src="./reservas.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="./db.js"></script>
+
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            background-color: #4CAF50;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #listareserva {
+            list-style: none;
+            padding: 0;
+        }
+
+        #listareserva li {
+            background: #e8f5e9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        #resultadoActualizacion,
+        #resultadoEliminacion,
+        #detalleReserva {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ADMINISTRACIÓN DE LAS RESERVAS DE NATUREAT</h1>
+
+    <div class="container">
+        <h2> Obtener Reservas</h2>
+        <input type="button" value="OBTENER TODAS LAS RESERVAS" onclick="getAll()" />
+        <ul id="listareserva"></ul>
+    </div>
+
+    <div class="container">
+        <h2> Hacer una Nueva Reserva</h2>
+        <input type="button" value="HACER UNA NUEVA RESERVA" onclick="postReserva()" />
+        <h3 id="resReserva"></h3>
+    </div>
+
+    <div class="container">
+        <h2> Buscar Reserva por ID</h2>
+        <div class="form-group">
+            <input type="text" id="reservaId" placeholder="Ingrese ID de la reserva" />
+            <input type="button" value="OBTENER RESERVA POR ID" onclick="getReserva()" />
+        </div>
+        <div id="detalleReserva"></div>
+    </div>
+
+    <div class="container">
+        <h2> Eliminar Reserva por ID</h2>
+        <div class="form-group">
+            <input type="text" id="idReservaEliminar" placeholder="Ingrese ID de la reserva" />
+            <input type="button" value="ELIMINAR RESERVA POR ID" onclick="deleteReserva()" />
+        </div>
+        <div id="resultadoEliminacion"></div>
+    </div>
+
+    <div class="container">
+        <h2>Actualizar Reserva</h2>
+        <div class="form-group">
+            <input type="text" id="idReservaActualizar" placeholder="Ingrese ID de la reserva" />
+            <input type="text" id="nombreActualizar" placeholder="Nuevo Nombre" />
+            <input type="text" id="apellidosActualizar" placeholder="Nuevos Apellidos" />
+            <input type="email" id="emailActualizar" placeholder="Nuevo Email" />
+            <input type="number" id="numPersonasActualizar" placeholder="Nuevo Número de Personas" />
+            <input type="text" id="tipoMesaActualizar" placeholder="Nuevo Tipo de Mesa" />
+            <input type="date" id="fechaActualizar" />
+            <input type="time" id="horaIniActualizar" placeholder="Nueva Hora Inicio" />
+            <input type="time" id="horaFinActualizar" placeholder="Nueva Hora Fin" />
+            <input type="number" id="numMesaActualizar" placeholder="Nuevo Número de Mesa" />
+            <input type="button" value="ACTUALIZAR RESERVA POR ID" onclick="updateReserva()" />
+        </div>
+        <div id="resultadoActualizacion"></div>
+    </div>
+</body>
+
+</html>

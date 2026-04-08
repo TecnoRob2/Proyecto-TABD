@@ -1,0 +1,314 @@
+/* Ajustes generales */
+
+*{
+    font-family: 'Inter',sans-serif;
+
+}
+
+body
+{
+    margin:0; /*quitar espacios entre los elementos*/
+}
+
+/*----- CABECERA -----*/
+
+
+.cabecera
+{
+    display: flex; /*bloques en misma linea*/
+    background-color: #6BFF75;
+    
+}
+
+
+
+
+.cabecera > img
+{
+    margin-left: 10px; /*margen izquierdo de la imagen*/
+    width: 100px;
+    height: 100%;
+
+}
+
+
+.contenedor1
+{
+    display: flex; /*bloques misma linea*/
+    width: 805.83px;
+    height: 100px;
+}
+
+.contenedor1 > h4
+{
+    text-align: center;
+    margin-top:40px;
+
+}
+
+
+
+
+.menu
+{
+    margin-top: 30px;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left:350px;
+    flex-wrap: wrap;
+}
+
+
+
+
+.menu >li > a
+{
+    text-decoration: none;
+    text-align: center;
+    color:black;
+    margin-left: auto;
+    font-weight: bold;
+    
+
+}
+
+.menu a:hover
+{
+    text-decoration: underline;
+
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: black;
+}
+
+/* Estilos para el contenido principal */
+h1
+{
+    text-align: center;
+    margin: 125px 0px 200px 0px;
+    font-size: 2.5em;
+}
+h1 span
+{
+    color: #00AD0C;
+    /*text-shadow:     
+    -1.1px -1.1px 0 black, 
+    1.1px -1.1px 0 black,  
+    -1.1px 1.1px 0 black,  
+    1.1px 1.1px 0 black;   */
+}
+
+/* Estilos para el layout de tres columnas */
+.tres-columnas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los artículos se ajusten si no caben en una fila */
+    gap: 20px; /* Espacio entre los artículos */
+    justify-content: center; /* Centra el contenido */
+    margin: 20px; /* Margen alrededor de la sección */
+}
+
+.tres-columnas article {
+    flex: 1 1 calc(33% - 40px); /* Tres columnas ajustando el espacio total */
+    box-sizing: border-box; /* Para que el padding y border no afecten al ancho total */
+    background-color: #f9f9f9; /* Fondo suave para los artículos */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tres-columnas article h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.tres-columnas article p, li {
+    font-family: 'Merriweather', sans-serif;
+    line-height: 1.8;
+    word-spacing: 0.35em;
+    margin-bottom: 1em;
+}
+
+.tres-columnas article details {
+    margin-top: 15px;
+}
+
+.tres-columnas article details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color:  #00850B;
+}
+li{
+    margin-left: 40px;
+
+}
+.tres-columnas details video{
+    width: 100%;
+    height: 100%;
+}
+
+/*Estilos del footer*/
+
+/*----- PIE DE PÁGINA -----*/
+
+
+footer {
+    background-color: #6BFF75; /* Color de fondo verde */
+    padding: 20px 50px; /* Espaciado interior */
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a los lados */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.Contenedor7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.Contenedor7 img {
+    width: 80px; /* Tamaño del logo */
+    margin-bottom: 10px;
+}
+
+.Contenedor7 h4 {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.Contenedor7 h5 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #333;
+}
+
+.Contenedor7 a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.Contenedor7 a:hover {
+    text-decoration: underline;
+}
+
+.Contenedor8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right:200px;
+}
+
+.Contenedor8 h5 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.Contenedor8 .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.Contenedor8 .social-icons img {
+    width: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Contenedor8 .social-icons img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+
+
+
+
+/* Diseño responsive */
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .Contenedor8 {
+        margin-top: 20px;
+    }
+
+    .tres-columnas
+    {
+        flex-direction: column;
+    }
+    
+}
+
+
+
+/* Hacer que el menú hamburguesa aparezca en pantallas de hasta 1070px */
+@media screen and (max-width: 1070px) {
+    .cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #6BFF75;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu li {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu a {
+        display: block;
+    }
+
+    /* Icono de hamburguesa mejor alineado */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background: none;
+        border: none;
+        color: black;
+    }
+
+    /* Ajustar para alinear con "Natureat" */
+    .contenedor1 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Mostrar el menú cuando esté activo */
+    .menu.active {
+        display: flex;
+    }
+}
