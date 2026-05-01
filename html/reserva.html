@@ -40,7 +40,7 @@
         </div>
     </header>
 
-    <h1><span>Reserva</span> tu mesa</h1>
+    <h1><span>Reserva</span> tu zona</h1>
     <div id="errorContainer" class="error-container"></div>
     <section>
         
@@ -58,15 +58,16 @@
             </div>
             <div>
                 <h2>Detalla tu reserva</h2>
+                <!--
                 <label for="numerodepersonas">Número de personas:</label>
                 <input required id="numerodepersonas" name="numerodepersonas">
-
-                <label for="tipodemesas">Tipo de mesa:</label>
-                <select id="tipodemesas" name="tipodemesas">
+                !-->
+                <label for="tipodezona">Tipo de zona:</label>
+                <select id="tipodezona" name="tipodezona">
                     <option value="-1">Selecciona una opción...</option>
-                    <option value="1">Mesa normal</option>
+                    <option value="1">Zona piscina</option>
                     <option value="2">Zona de barbacoa</option>
-                    <option value="3">Zona mixta</option>
+                    <option value="3">Zona Premium</option>
                 </select>
                 <label for="fecha">Selecciona una fecha:</label>
                 <input type="date" id="fecha" name="fecha">
@@ -76,8 +77,8 @@
                         <label for="horafin">a:</label>
                         <input type="time" id="horafin" name="hora">
                     </div>
-                <label for="numerodemesa">Número de mesa:</label>
-                <select id="numerodemesa" name="numerodemesa">
+                <label for="numerodezona">Número de zona:</label>
+                <select id="numerodezona" name="numerodezona">
                     <option value="-1">Selecciona una opción...</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
