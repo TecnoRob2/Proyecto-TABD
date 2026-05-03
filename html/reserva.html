@@ -14,9 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/reserva.css">
-    <script src="../js/reserva_valida.js"></script>
+    <!--<script src="../js/reserva_valida.js"></script>-->
 </head>
-
 <body>
 
     <header>
@@ -46,39 +45,41 @@
         
 
         
-        <form action="http://localhost:8080/reserva" method="post" onsubmit="return validar()"> <!-- Formulario de contacto para llevar a cabo la reserva. Controlamos el envio con onsumbit()-->
+         <form id="formularioReserva"> 
             <div>
                 <h2>¿Quién eres?</h2>
                 <label for="nombre">Nombre:</label>
-                <input required type="text" id="nombre" name="nombre">
+                <input required type="text" id="nombreInput" name="nombre">
+                
                 <label for="apellidos">Apellidos:</label>
-                <input required type="text" id="apellidos" name="apellidos">
+                <input required type="text" id="apellidosInput" name="apellidos">
+                
                 <label for="email">Correo electrónico:</label>
-                <input required type="email" id="email" name="email">
+                <input required type="email" id="correoInput" name="email">
             </div>
+            
             <div>
                 <h2>Detalla tu reserva</h2>
-                <!--
-                <label for="numerodepersonas">Número de personas:</label>
-                <input required id="numerodepersonas" name="numerodepersonas">
-                !-->
                 <label for="tipodezona">Tipo de zona:</label>
-                <select id="tipodezona" name="tipodezona">
+                <select id="tipoZonaSelect" name="tipodezona">
                     <option value="-1">Selecciona una opción...</option>
                     <option value="1">Zona piscina</option>
                     <option value="2">Zona de barbacoa</option>
                     <option value="3">Zona Premium</option>
                 </select>
+                
                 <label for="fecha">Selecciona una fecha:</label>
-                <input type="date" id="fecha" name="fecha">
-                    <div>
-                        <label for="horaini">De:</label>
-                        <input type="time" id="horaini" name="hora">
-                        <label for="horafin">a:</label>
-                        <input type="time" id="horafin" name="hora">
-                    </div>
+                <input type="date" id="fechaInput" name="fecha" required>
+                
+                <div>
+                    <label for="horaini">De:</label>
+                    <input type="time" id="horaInicioInput" name="horaini" required>
+                    <label for="horafin">a:</label>
+                    <input type="time" id="horaFinInput" name="horafin" required>
+                </div>
+                
                 <label for="numerodezona">Número de zona:</label>
-                <select id="numerodezona" name="numerodezona">
+                <select id="numeroZonaSelect" name="numerodezona">
                     <option value="-1">Selecciona una opción...</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -92,19 +93,18 @@
                     <option value="10">10</option>
                     <option value="11">11</option>
                     <option value="12">12</option>
-                    <option value="1">13</option>
-                    <option value="2">14</option>
-                    <option value="3">15</option>
-                    <option value="1">16</option>
-                    <option value="2">17</option>
-                    <option value="3">18</option>
-                    <option value="1">19</option>
-                    <option value="2">20</option>
-                    <option value="3">21</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
                 </select>
             </div>
             <input type="submit" value="Enviar">
-            
         </form>
 
     
@@ -138,6 +138,59 @@
         </div>
     </footer>
 
-    <script src="reserva.js"></script>
+    <!-- <script src="reserva.js"></script> -->
 </body>
+<script>
+    document.getElementById('formularioReserva').addEventListener('submit', function(e) {
+        // 1. Detenemos la recarga de la página (sustituye al antiguo return false)
+        e.preventDefault(); 
+
+        // 2. Validaciones integradas
+        const tipoZona = document.getElementById('tipoZonaSelect').value;
+        const numeroZona = document.getElementById('numeroZonaSelect').value;
+        const dia = document.getElementById('fechaInput').value;       
+        const horaIni = document.getElementById('horaInicioInput').value;   
+        const horaFin = document.getElementById('horaFinInput').value;  
+        
+        if (tipoZona === "-1" || numeroZona === "-1") {
+            alert("Por favor, selecciona un tipo y un número de zona válidos.");
+            return; // Corta la ejecución si hay error
+        }
+
+        if(horaFin <= horaIni) {
+            alert("La hora de fin debe ser posterior a la hora de inicio.");
+            return; // Corta la ejecución si hay error
+        }
+
+        // 3. Preparar los datos si las validaciones son correctas
+        const datos = new URLSearchParams();
+        datos.append('nombre', document.getElementById('nombreInput').value);
+        datos.append('apellidos', document.getElementById('apellidosInput').value);
+        datos.append('correo', document.getElementById('correoInput').value);
+        datos.append('tipoZona', tipoZona);
+        datos.append('numeroZona', numeroZona);
+
+        const fIniCompleta = dia + " " + horaIni + ":00"; 
+        const fFinCompleta = dia + " " + horaFin + ":00";
+        datos.append('f_ini', fIniCompleta);
+        datos.append('f_fin', fFinCompleta);
+
+        // 4. Enviar a Spring Boot
+        fetch('http://localhost:8080/api/realizarReserva', {
+            method: 'POST',
+            body: datos
+        })
+        .then(respuesta => respuesta.text())
+        .then(mensaje => {
+            alert(mensaje); // Mostrará el mensaje que devuelve Oracle/Java
+            if(mensaje.includes("correctamente")) {
+                document.getElementById('formularioReserva').reset(); // Limpia el formulario
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("No se pudo conectar con el servidor Java.");
+        });
+    });
+</script>
 </html>
