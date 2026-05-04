@@ -161,6 +161,18 @@
             alert("La hora de fin debe ser posterior a la hora de inicio.");
             return; // Corta la ejecución si hay error
         }
+        if(tipoZona === "1" && (numeroZona < 1 || numeroZona > 7)) {
+            alert("Para la zona piscina, el número de zona debe estar entre 1 y 7.");
+            return; // Corta la ejecución si hay error
+        }
+        if(tipoZona === "2" && (numeroZona < 8 || numeroZona > 14)) {
+            alert("Para la zona de barbacoa, el número de zona debe estar entre 8 y 14.");
+            return; // Corta la ejecución si hay error
+        }
+        if(tipoZona === "3" && (numeroZona < 15 || numeroZona > 21)) {
+            alert("Para la zona Premium, el número de zona debe estar entre 15 y 21.");
+            return; // Corta la ejecución si hay error
+        }
 
         // 3. Preparar los datos si las validaciones son correctas
         const datos = new URLSearchParams();
